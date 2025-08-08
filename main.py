@@ -6,13 +6,22 @@ def get_book_text(filepath):
         return file_contents
 
 def main():
-    book_text = get_book_text("books/frankenstein.txt")
+    print("============ BOOKBOT ============")
+
+    filepath = "books/frankenstein.txt"
+    print(f"Analyzing book found at {filepath}...")
+    book_text = get_book_text(filepath)
     
     num_words = get_num_words(book_text)
-    print(f"{num_words} words found in the document")
+    print("----------- Word Count ----------")
+    print(f"Found {num_words} total words")
 
     num_char = get_num_char(book_text)
-    print(num_char)
+    print("--------- Character Count -------")
+    for item in num_char:
+        print(f"{item["char"]}: {item["num"]}")
+
+    print("============= END ===============")
 
 main()
 
